@@ -198,8 +198,6 @@ Pour plus d’information : [CC BY-NC-ND 4.0](https://creativecommons.org/licens
 
 ---
 
-
-
 # 21 Jake 🎲
 
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red)
@@ -211,10 +209,8 @@ Pour plus d’information : [CC BY-NC-ND 4.0](https://creativecommons.org/licens
 
 ## Description
 
-**21 Jake** is a personal project designed to recreate the classic blackjack experience  
-with a **modern**, **immersive**, and **neon-styled** interface.  
-The goal is to combine **strategic gameplay**, **smooth animations**, and a **polished UI**  
-to deliver an engaging experience for players.
+**21 Jake** is a personal project designed to recreate the classic blackjack experience with a **modern**, **immersive**, and **neon-styled** interface.  
+The goal is to combine **strategic gameplay**, **smooth animations**, and a **polished UI** to deliver an engaging experience for players.
 
 ---
 
@@ -233,18 +229,17 @@ to deliver an engaging experience for players.
 
 ## Features
 
-- Interactive blackjack game using classic rules  
-- Balance and bet management  
-- Automatic Blackjack detection  
-- Dealer logic and player actions (Hit / Stand / Double)  
-- Secondary bets: Perfect Pair, Hot3, 21+3  
-- Full game history with pagination  
-- Interactive popups (results, errors, Game Over)  
-- Canvas animations for results (glide + fade)  
-- Typewriter animation for the “About” popup  
-- Responsive design with mobile hamburger menu  
-- Custom visual assets (Daz3D + Photoshop)  
-- Real-time card drawing via **deckofcardsapi**  
+- Interactive blackjack game using classic rules
+- Balance and bet management
+- Automatic Blackjack detection
+- Secondary bets: Perfect Pair, Hot3, 21+3
+- Full game history with pagination
+- Interactive popups (results, errors, Game Over)
+- Canvas animations for results (glide + fade)
+- Typewriter animation for the “About” popup
+- Responsive design with mobile hamburger menu
+- Custom visual assets (Daz3D + Photoshop)
+- Real-time card drawing via **deckofcardsapi**
 
 ---
 
@@ -252,14 +247,139 @@ to deliver an engaging experience for players.
 
 The project is structured into **React components**:
 
+```
+📂 src
+│
+├── 📁 assets
+│ ├── 📁 imgs # Card images, chips, results
+│ └── 📁 lose-wins # Win/Loss graphics
+│
+├── 📁 components
+│ ├── 📄 Header.jsx # Header with links + hamburger menu
+│ ├── DealerZone.jsx # Dealer hand
+│ ├── PlayerHand.jsx # Player hand
+│ ├── SlotZone.jsx # Additional card slots
+│ ├── ControlsZone.jsx # Player action buttons
+│ ├── ChipsZone.jsx # Bet chips
+│ ├── BetZone.jsx # Bet amount control
+│ ├── ScoreZone.jsx # Balance + bet display
+│ ├── HistoryPopup.jsx # Game history popup
+│ └── Popups.jsx # Result / error / Game Over popups
+│
+├── App.jsx # Main game logic
+├── App.css # Global styles
+└── index.js # Entry point
+```
 
+---
 
+## State Management (React Hooks)
 
+- **`useState`** → player/dealer hands, balance, bet, game state, popups, typing animation
+- **`useEffect`** → card animations, game over checks, history updates
+- **`useRef`** → previous values, typing animation control
+- **`useCallback` / `useMemo`** → memoized actions & typewriter text
 
+---
 
+## Game Flow
 
+1. Player selects a bet via **ChipsZone**
+2. Start a game → fetch a shuffled deck from **deckofcardsapi**
+3. Cards dealt to player and dealer
+4. Player chooses **Hit**, **Stand**, or **Double**
+5. Dealer plays automatically
+6. Results and side bets are calculated
+7. Balance updated and game added to history
+8. Result popup + canvas animation displayed
 
+---
 
+## Technologies Used
 
+- **React** (Hooks)
+- **Axios** for HTTP requests
+- **Bootstrap** (base styles)
+- **Custom CSS** (neon + animations)
+- **deckofcardsapi.com** for card drawing
 
+---
+
+## Visual Structure
+
+- **Header**: logo, GitHub/DeviantArt links, mobile hamburger menu
+- **Game Grid**:
+  - `DealerZone`: dealer hand
+  - `SlotZone`: card slots
+  - `PlayerHand`: player hand
+- **Action Grid**:
+  - `ControlsZone`: Hit / Stand / Double
+  - `ScoreZone`: balance + bet
+  - `BetZone`: bet control
+  - `ChipsZone`: chips buttons
+- **Popups**:
+  - Game result
+  - History
+  - About
+  - Error / Game Over
+
+---
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/21-jake.git
+```
+2. Install dependencies:
+```
+cd 21-jake
+npm install
+```
+3. Start the application:
+```bash
+npm run dev
+```
+4. Open the application in your browser:
+```bash
+http://localhost:5173
+```
+
+---
+
+## License
+
+© 2025 MagicAres. All rights reserved.
+
+### 1. Code source
+
+The code source of this project (JavaScript, React, CSS, etc.) is protected by copyright.  
+
+**Usage allowed:**  
+- Use for personal projects.
+- Contributions via pull requests with prior written consent.
+
+**Usage prohibited:**  
+- Redistribution or sale of the code.
+- Use of the code for commercial purposes.
+- Copying or publishing the code under another name without prior written consent.
+
+### 2. Assets and images
+
+All images, logos, and files in `src/assets/` are protected by the following license:  
+
+**Creative Commons Attribution – Non-Commercial – No Derivatives (CC BY-NC-ND 4.0)**
+
+**Usage allowed:**  
+- Download or share on personal projects.
+- Mentioning the author: MagicAres.
+
+**Usage prohibited:**  
+- Usage for commercial purposes.
+- Modification or creation of derivative works.
+- Redistribution without mentioning the author.
+
+For more information: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+---
 
