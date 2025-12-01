@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import githubLogo from '../assets/imgs/github-logo.png';
+import brandImg from '../assets/imgs/brand.jpg';
 
 export default function Header({ openHistory, openDropdown }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,17 +42,17 @@ export default function Header({ openHistory, openDropdown }) {
                   <li>
                     <a href="https://www.deviantart.com/magicares" target="_blank">DeviantArt</a>
                   </li>
-                  
+
                 </ul>
               )}
             </>
           ) : (
             <div id="logo">
               <a href="https://github.com/MagicAres" target="_blank">
-                <img src="src/assets/imgs/github-logo.png" alt="Github logo" width="40" height="40" title="Github" />
+                <img src={githubLogo} alt="Github logo" width="40" height="40" title="Github" />
               </a>
               <a href="https://www.deviantart.com/magicares" target="_blank">
-                <img src="src/assets/imgs/brand.jpg" alt="MagicAres DeviantArt" width="40" height="40" title="DeviantArt" />
+                <img src={brandImg} alt="MagicAres DeviantArt" width="40" height="40" title="DeviantArt" />
               </a>
               <br />
               <sup>MagicAres</sup>

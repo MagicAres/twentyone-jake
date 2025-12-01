@@ -425,6 +425,10 @@ sup {
     transition: all 5s ease-in-out;
     background-color: var(--bg-1);
 }
+.popup-result h2,
+.popup-error h2 {
+    font-size: 2rem;
+}
 
 .btn-close-neon {
     /* bouton fermer du popup */
