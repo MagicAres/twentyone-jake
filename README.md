@@ -49,25 +49,26 @@ Le projet est structuré en **composants React** :
 
 src/
 │
-├─ assets/
-│ ├─ imgs/ # Images des cartes, jetons et résultats
-│ └─ lose-wins/ # Images de victoire/défaite
+├── assets/
+│   ├── imgs/          # Images des cartes, jetons et résultats
+│   └── lose-wins/     # Images de victoire/défaite
 │
-├─ components/
-│ ├─ Header.jsx # Header avec liens et menu hamburger
-│ ├─ DealerZone.jsx # Affichage de la main du croupier
-│ ├─ PlayerHand.jsx # Affichage de la main du joueur
-│ ├─ SlotZone.jsx # Emplacements des cartes jouées
-│ ├─ ControlsZone.jsx # Boutons Jouer / Stand / Double
-│ ├─ ChipsZone.jsx # Boutons de mise par valeur
-│ ├─ BetZone.jsx # Affichage et contrôle de la mise
-│ ├─ ScoreZone.jsx # Affichage du solde et de la mise
-│ ├─ HistoryPopup.jsx # Popup historique des parties
-│ └─ Popups.jsx # Popup résultat, erreurs, game over
+├── components/
+│   ├── Header.jsx         # Header avec liens et menu hamburger
+│   ├── DealerZone.jsx     # Affichage de la main du croupier
+│   ├── PlayerHand.jsx     # Affichage de la main du joueur
+│   ├── SlotZone.jsx       # Emplacements des cartes jouées
+│   ├── ControlsZone.jsx   # Boutons Jouer / Stand / Double
+│   ├── ChipsZone.jsx      # Boutons de mise par valeur
+│   ├── BetZone.jsx        # Affichage et contrôle de la mise
+│   ├── ScoreZone.jsx      # Affichage du solde et de la mise
+│   ├── HistoryPopup.jsx   # Popup historique des parties
+│   └── Popups.jsx         # Popup résultat, erreurs, game over
 │
-├─ App.jsx # Composant principal gérant le jeu et les états
-├─ App.css # Styles globaux
-└─ index.js # Point d’entrée
+├── App.jsx     # Composant principal gérant le jeu et les états
+├── App.css     # Styles globaux
+└── index.js    # Point d’entrée
+
 
 
 ---
@@ -83,9 +84,9 @@ src/
 
 ## Flux de jeu
 
-1. Le joueur sélectionne sa mise via `ChipsZone` ou `BetZone`.
+1. Le joueur sélectionne sa mise via `ChipsZone`.
 2. Cliquer sur "Nouvelle Partie" tire un deck via l’API **deckofcardsapi**.
-3. Distribution des cartes au joueur et au dealer.
+3. Distribution des cartes au joueur et au croupier.
 4. Le joueur peut **tirer**, **stand** ou **double** selon les règles.
 5. Le croupier joue automatiquement sa main.
 6. Calcul des résultats, mises secondaires et mise à jour du solde.
