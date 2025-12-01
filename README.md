@@ -43,7 +43,7 @@ L'objectif est de combiner **gameplay stratégique**, **design néon élégant**
 
 ---
 
-## Architecture
+
 
 Le projet est structuré en **composants React** :
 
