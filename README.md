@@ -47,33 +47,31 @@ L'objectif est de combiner **gameplay stratégique**, **design néon élégant**
 
 Le projet est structuré en **composants React** :
 
-Architecture
+## 📁 Architecture
 
-Le projet est structuré en composants React :
-
-src/
-│── assets/
-│   ├── imgs/          # Images des cartes, jetons et résultats
-│   └── lose-wins/     # Images de victoire/défaite
+```
+📂 src
 │
-│── components/
-│   ├── Header.jsx         # Header avec liens et menu hamburger
-│   ├── DealerZone.jsx     # Affichage de la main du croupier
-│   ├── PlayerHand.jsx     # Affichage de la main du joueur
-│   ├── SlotZone.jsx       # Emplacements des cartes jouées
-│   ├── ControlsZone.jsx   # Boutons Jouer / Stand / Double
-│   ├── ChipsZone.jsx      # Boutons de mise par valeur
-│   ├── BetZone.jsx        # Affichage et contrôle de la mise
-│   ├── ScoreZone.jsx      # Affichage du solde et de la mise
-│   ├── HistoryPopup.jsx   # Popup historique des parties
-│   └── Popups.jsx         # Popup résultat, erreurs, game over
+├── 📁 assets
+│   ├── 📁 imgs              # Images des cartes, jetons et résultats
+│   └── 📁 lose-wins         # Images de victoire/défaite
 │
-├── App.jsx    # Composant principal gérant le jeu et les états
-├── App.css    # Styles globaux
-└── index.js   # Point d’entrée
-
-
-
+├── 📁 components
+│   ├── 📄 Header.jsx         # Header avec liens et menu hamburger
+│   ├── 📄 DealerZone.jsx     # Affichage main croupier
+│   ├── 📄 PlayerHand.jsx     # Affichage main joueur
+│   ├── 📄 SlotZone.jsx       # Emplacements des cartes
+│   ├── 📄 ControlsZone.jsx   # Boutons actions joueur
+│   ├── 📄 ChipsZone.jsx      # Jetons + mise
+│   ├── 📄 BetZone.jsx        # Gestion mise
+│   ├── 📄 ScoreZone.jsx      # Solde & mise
+│   ├── 📄 HistoryPopup.jsx   # Historique
+│   └── 📄 Popups.jsx         # Popups résultats / erreurs
+│
+├── 📄 App.jsx                # Composant principal
+├── 📄 App.css                # Styles globaux
+└── 📄 index.js               # Entrée du projet
+```
 
 ---
 
