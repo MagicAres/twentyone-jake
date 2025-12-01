@@ -1,0 +1,1070 @@
+/*  * le global */
+:root {
+    --bg-1: #060712;
+    /* très foncé */
+    --bg-2: #071226;
+    /* bleu nuit */
+    --panel: rgba(255, 255, 255, 0.04);
+    --neon-cyan: #00f0ff;
+    --neon-magenta: #ff00d0;
+    --neon-accent: #9cff6b;
+    --glass: rgba(255, 255, 255, 0.03);
+    --text-soft: #cfeefb;
+    --muted: #9aa8b3;
+    --card-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    --glow: 0 0 12px rgba(0, 240, 255, 0.18), 0 0 30px rgba(255, 0, 208, 0.06);
+    --radius: 12px;
+}
+
+@font-face {
+    font-family: "Casino 3D Marquee", 'Segoe UI', 'Roboto', sans-serif;
+    /* set name */
+    src: url(./assets/fonts/Casino3DMarquee.ttf) format("truetype");
+    /* url of the font */
+}
+
+@font-face {
+    font-family: "Voodoo Vampire", sans-serif, 'Segoe UI', 'Roboto', sans-serif;
+    src: url(./assets/fonts/VoodooVampire.ttf) format("truetype");
+}
+
+#root {
+    min-width: 940px;
+    margin: 0 auto;
+    /* padding: 2rem; */
+    text-align: center;
+    margin-top: 0;
+    background-image: url(./assets/imgs/pappy-jake.png);
+    background-size: 896px auto;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    background-attachment: fixed;
+    z-index: 9999;
+}
+
+body {
+    /* background-image: url(./assets/imgs/pappy-jake.png); */
+    background-size: 896px auto;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    background-attachment: fixed;
+    background-color: var(--bg-1);
+}
+
+/* Cache les barres de défilement sur l'ensemble de la page */
+html,
+body {
+    overflow: auto;
+    /* ou scroll si nécessaire */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer + Edge Legacy */
+}
+
+/* Webkit (Chrome, Edge Chromium, Opera, Safari) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    display: none;
+    display: none;
+}
+
+
+
+
+.casino {
+    font-family: "Casino 3D Marquee";
+    color: var(--montexte);
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin: 0;
+    margin-top: 7px;
+    padding: 0;
+    background: linear-gradient(45deg,
+            #ff00ea,
+            #ffaa00,
+            #ffef00,
+            #00ff85,
+            #00eaff,
+            #ff00ea,
+            #4400ff,
+            #ff00ea,
+            #00eaff,
+            #00ff85,
+            #ffef00,
+            #ffaa00,
+            #ff00ea);
+
+    background-size: 300% 300%;
+    animation: neonGradient 180s ease-in-out infinite;
+    animation-direction: reverse;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.jake-ttf {
+    font-family: "Voodoo Vampire";
+    font-size: 3rem;
+    color: var(--montexte);
+}
+
+.casino-bg {
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    color: var(--text-soft);
+    padding-bottom: 40px;
+}
+
+/* * le Header */
+.headerGrid {
+    display: grid;
+    grid-template-columns: 10% 1fr 10%;
+    align-items: center;
+
+    text-align: center;
+}
+
+.headerLeft {
+    justify-self: start;
+    text-align: left;
+    align-self: start;
+}
+
+.headerCenter {
+    justify-self: center;
+    text-align: center;
+    height: 300px;
+    width: 800px;
+    background-image: url(./assets/imgs/Jake-header-notitle.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.headerRight {
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: start;
+}
+
+.neon-title {
+    text-align: center;
+    color: var(--neon-magenta);
+    text-shadow: 0 0 14px rgba(255, 0, 208, 0.14);
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+}
+
+#logo img {
+    margin-right: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(255, 0, 255, 0.5);
+}
+
+sup {
+    color: #00ff51;
+    text-shadow: 0 0 6px #7bff00;
+    margin-left: 10px;
+    font-size: 0.8rem;
+
+}
+
+.headerCenter h1 {
+    font-family: "Casino 3D Marquee";
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin: 0;
+    margin-top: 70px;
+    padding: 0;
+    background: linear-gradient(45deg,
+            #ff00ea,
+            #00eaff,
+            #ffaa00,
+            #00ff85,
+            #ffef00,
+            #4400ff,
+            #00ff85,
+            #ffaa00,
+            #00eaff,
+            #ff00ea);
+    background-size: 300% 300%;
+    animation: neonGradient 6s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes neonGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 150% 50%;
+    }
+
+    100% {
+        background-position: 300% 50%;
+    }
+}
+
+/* * le main */
+.game-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:
+        auto
+        /* croupier */
+        auto
+        /* slots */
+        auto
+        /* player */
+        auto
+        /* controles */
+        auto
+        /* chips */
+    ;
+    gap: 8px;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 2px;
+    text-align: center;
+}
+
+/* * le croupier */
+.dealer-zone {
+    grid-column: 1 / -1;
+    background: var(--panel);
+    border-radius: var(--radius);
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--glow);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.dealer-name {
+    margin: 0 0 4px 0;
+    font-weight: 700;
+    color: var(--neon-magenta);
+    text-shadow: 0 0 10px rgba(255, 0, 208, 0.08);
+}
+
+.cards-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 3px 0;
+    height: 117px;
+    overflow: hidden;
+}
+
+/* * la donne de max 7 cartes */
+.card,
+.slot-card {
+    width: auto;
+    height: 111px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.15));
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.card:hover,
+.slot-card:hover {
+    transform: translateY(-6px);
+}
+
+.slots-zone {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 3px 4px;
+    background: transparent;
+}
+
+/* * cartes main joueur */
+.player-zone {
+    grid-column: 1 / -1;
+    background: var(--panel);
+    padding: 6px;
+    border-radius: var(--radius);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* * les controles du jeu */
+.actions-grid {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* 3 colonnes */
+    align-items: center;
+    justify-items: center;
+    /* centre horizontalement chaque cellule */
+    gap: 10px 20px;
+    /* row-gap column-gap */
+    width: 100%;
+    margin-top: 10px;
+    background-color: none;
+}
+
+/* Ligne 1 */
+.controls-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.score-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.005));
+}
+
+/* Ligne 2 */
+.bet-zone {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.bet-input-neon {
+    width: 180px;
+    height: 70px;
+    text-align: center;
+    color: var(--bg-1);
+    font-size: 1rem;
+    font-style: oblique;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-shadow: 0 0 6px var(--text-soft);
+    background-image: url(./assets/imgs/mise-bckgnd.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Ligne 3 */
+.chips-zone {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* chips */
+.chip-btn {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.015), rgba(0, 0, 0, 0.08));
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    color: var(--montexte)
+}
+
+/* * les Popup */
+.showEndPopup {
+    background-image: url(./assets/imgs/bckgnd.jpg);
+    background-size: cover;
+    color: white;
+}
+
+.popup-neon {
+    width: min(1100px, 96%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: var(--glow), 0 8px 30px rgba(0, 0, 0, 0.7);
+    background-image: url(./assets/imgs/popup.png);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.popup-result,
+.popup-error {
+    min-width: 300px;
+    padding: 18px;
+    background: radial-gradient(rgba(255, 255, 255, 0.02), #152929, #427272, #72FFFF);
+    border-radius: 12px;
+    box-shadow: var(--glow);
+    text-align: center;
+    transition: all 5s ease-in-out;
+    background-color: var(--bg-1);
+}
+
+.btn-close-neon {
+    /* bouton fermer du popup */
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    color: var(--text-soft);
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* fenetre Game Over */
+.popup-go-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.popup-box {
+    background: #111;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 15px #ff00ff;
+    border: 2px solid #ff00ff;
+    animation: popupFade 0.4s ease-out;
+}
+
+.popup-box h1 {
+    margin-bottom: 10px;
+    color: #ff00ff;
+    font-size: 2rem;
+}
+
+.popup-box p {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.popup-box button {
+    background: #ff00ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.popup-box button:hover {
+    background: #cc00cc;
+}
+
+@keyframes popupFade {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ----------------------------------------------
+   Fenêtre A Propos – 100% compatible Safari
+------------------------------------------------*/
+/* Overlay */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 8, 20, 0.6);
+    padding: 10px; /* réduit pour éviter dépassement */
+    z-index: 9998;
+    overflow: hidden; /* plus de scrollbar globale */
+    box-sizing: border-box;
+}
+
+/* WRAPPER qui reçoit l’animation (et non le popup) */
+.popup-wrapper {
+    animation: popupGrow .35s ease-out forwards;
+    transform: scale(.85);
+    opacity: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* évite les scrollbars Safari */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+/* Le popup lui-même */
+.popup-apropos {
+    background: radial-gradient(circle, var(--bg-1) 0%, var(--bg-2) 88%, rgba(187, 0, 255, 1) 100%);
+    box-shadow: 0 0 15px #ff00ff;
+    border: 2px solid #ff00ff;
+    width: fit-content;
+    max-width: 85vw;
+    height: fit-content;
+    max-height: calc(100% - 20px); /* pour tenir dans overlay */
+    padding: 24px;
+    border-radius: 16px;
+    text-align: left;
+    display: block;
+    overflow: visible;
+    position: relative;
+    box-sizing: border-box;
+}
+
+@keyframes popupGrow {
+    from { opacity: 0; transform: scale(.8); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* ----------------------------------------------
+   Contenu interne
+------------------------------------------------*/
+.apropos-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--montexte);
+    text-align: center;
+}
+
+/* Conteneur texte animé */
+.apropos-animated {
+    position: relative;
+    width: 100%;
+    max-height: calc(85vh - 120px); /* espace pour titre + bouton */
+    overflow-y: auto; /* scroll seulement si texte trop long */
+    margin-top: 10px;
+    color: var(--montexte);
+    text-align: left;
+    animation: slideUp 0.9s ease-out forwards;
+    box-sizing: border-box;
+}
+
+/* Animation montée du texte */
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Texte machine à écrire */
+.apropos-typewriter {
+    font-family: "Courier New", monospace;
+    white-space: pre-wrap;
+    text-align: left;
+    display: block;
+    width: 100%; 
+}
+
+/* Bouton "Ok" centré sous le texte */
+.btn-close-apropos {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    color: var(--montexte);
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+
+    margin: 20px auto 0 auto;
+    display: block;
+}
+
+/* Scrollbar discrète pour le texte */
+.apropos-animated::-webkit-scrollbar {
+    width: 6px;
+}
+
+.apropos-animated::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 255, 0.3);
+    border-radius: 3px;
+}
+
+.line-centered {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.close-button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+/* * les boutons */
+.btnNav1 {
+    background-image: url(./../src/assets/imgs/buttons/btn-nav-1.png);
+    margin-left: 10px;
+}
+
+.btnNav2 {
+    background-image: url(./../src/assets/imgs/buttons/btn-nav-2.png);
+}
+
+.btn-ui-1 {
+    background-image: url(./../src/assets/imgs/buttons/btn-ui-1.png);
+}
+
+.btn-ui-2 {
+    background-image: url(./../src/assets/imgs/buttons/btn-ui-2.png);
+}
+
+.btn-ui-3 {
+    background-image: url(./../src/assets/imgs/buttons/btn-ui-3.png);
+}
+
+.btn-ui-4 {
+    background-image: url(./../src/assets/imgs/buttons/btn-ui-4.png);
+}
+
+.btn-ui-5 {
+    background-image: url(./../src/assets/imgs/buttons/btn-ui-5.png);
+}
+
+.btnNav1,
+.btnNav2 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 140px;
+    height: 70px;
+    background-color: rgba(255, 0, 255, 0.5);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--montexte);
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 0 0 6px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    box-shadow:
+        0 0 8px rgba(255, 0, 255, 0.5),
+        0 0 15px rgb(113, 9, 113);
+    margin: 10px;
+}
+
+.btnNav1:hover,
+.btnNav2:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 12px rgba(255, 0, 255, 0.7),
+        0 0 25px rgba(255, 0, 255, 0.5),
+        0 0 40px rgba(255, 0, 255, 0.4);
+}
+
+.btn-ui-1,
+.btn-ui-2,
+.btn-ui-3,
+.btn-ui-4,
+.btn-ui-5 {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 180px;
+    height: 70px;
+    color: var(--montexte);
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.btn-ui-1:hover,
+.btn-ui-1 span:hover,
+.btn-ui-2:hover,
+.btn-ui-3:hover,
+.btn-ui-4:hover,
+.btn-ui-5:hover {
+    transform: scale(1.05);
+    background-color: transparent !important;
+}
+
+.btn-ui-1:disabled,
+.btn-ui-2:disabled,
+.btn-ui-3:disabled,
+.btn-ui-4:disabled,
+.btn-ui-5:disabled {
+    opacity: 0.45;
+    filter: grayscale(1);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-ui-1 span,
+.btn-ui-2 span,
+.btn-ui-3 span,
+.btn-ui-4 span,
+.btn-ui-5 span {
+    color: var(--montexte);
+    font-weight: 800;
+    text-shadow: 0 0 8px #000, 0 0 12px #000;
+    background-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.btn-neon {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+    color: var(--text-soft);
+    font-weight: 600;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.6), 0 0 18px rgba(0, 240, 255, 0.06);
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.btn-neon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.6), var(--glow);
+}
+
+/* * les canvas */
+.canvasRow {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.overlay-parent {
+    position: relative;
+    /* NECESSAIRE pour overlay */
+}
+
+.result-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:
+        translate(-50%, -50%) translate(-440px, -380px);
+    /* x (horizontal)                         
+                                valeur positive → vers la droite
+                                valeur négative → vers la gauche
+                                y (vertical)
+                                valeur positive → vers le BAS
+                                valeur négative → vers le HAUT 
+                                transform: translate(-50%, -50%); */
+    pointer-events: none;
+    width: 260px;
+    height: 260px;
+    z-index: 5;
+}
+
+#resultCanvas {
+    position: absolute;
+    left: 25%;
+    top: -490px;
+    transform: translateX(-50%);
+    pointer-events: none;
+
+}
+
+/* * l'historique */
+.historyTable img.cardMini {
+    width: 40px;
+    border-radius: 4px;
+}
+
+.cardsCell {
+    display: flex;
+    gap: 4px;
+}
+
+.neon-table thead th {
+    border-color: rgba(255, 255, 255, 0.03);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 6px rgba(0, 240, 255, 0.08);
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+.neon-table tbody td {
+    vertical-align: middle;
+    color: var(--text-soft);
+}
+
+/* popup centré */
+.popup-neon-centered {
+    width: min(920px, 95%);
+    max-height: 80vh;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(6, 10, 12, 0.95), rgba(3, 6, 8, 0.95));
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 200, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* close button (coin) */
+.btn-close-neon {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    background: transparent;
+    border: none;
+    color: var(--neon-cyan);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* wrapper table - scroll vertical */
+.history-table-wrapper {
+    max-height: calc(80vh - 150px);
+    overflow-y: auto;
+    margin-top: 10px;
+    padding-right: 6px;
+}
+
+/* table style neon */
+.neon-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+/* mini cartes */
+.card-mini {
+    width: 40px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* cellule de cartes flex */
+.cardsCell {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* header / body colors */
+.neon-table thead th {
+    border-color: rgba(255, 255, 255, 0.03);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 6px rgba(0, 240, 255, 0.08);
+    vertical-align: middle;
+    font-weight: 600;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.neon-table tbody td {
+    vertical-align: middle;
+    color: var(--text-soft);
+    padding: 6px 8px;
+    text-align: center;
+}
+
+/* pagination */
+.history-pagination {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 4px 0;
+}
+
+.page-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-soft);
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.page-btn:hover {
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+}
+
+.page-btn.active {
+    background: linear-gradient(90deg, rgba(0, 200, 255, 0.12), rgba(0, 120, 255, 0.06));
+    border-color: rgba(0, 200, 255, 0.24);
+    color: var(--neon-cyan);
+}
+
+.page-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.history-table-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.history-table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 200, 255, 0.08);
+    border-radius: 8px;
+}
+
+.dots {
+    padding: 0 8px;
+    color: var(--text-soft);
+}
+
+/* * responsive */
+@media (max-width: 992px) {
+    .game-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .controls-zone,
+    .bet-zone,
+    .score-zone {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .score-zone {
+        text-align: center;
+    }
+
+    .slots-zone {
+        overflow-x: auto;
+        padding: 8px 6px;
+        gap: 8px;
+    }
+
+    .card,
+    .slot-card {
+        width: 64px;
+        max-height: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .card,
+    .slot-card {
+        width: 58px;
+        max-height: 80px;
+    }
+
+    .btn-row {
+        gap: 8px;
+    }
+
+    .btn-neon {
+        padding: 8px 10px;
+        font-size: 0.92rem;
+    }
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--neon-accent);
+}
+
+/* Menu mobile */
+.mobileMenu {
+  position: absolute;
+  top: 60px; 
+  left: 0;
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  list-style: none;
+  z-index: 1000;
+  
+}
+.mobileMenu li, .mobileMenu li a {
+  list-style: none;     
+  margin: 10px 0;       
+  cursor: pointer;
+  text-decoration: none; 
+  color: var(--neon-cyan)
+}
+.mobileMenu li a:hover, .mobileMenu li:hover {
+    color: var(--neon-magenta);
+    text-decoration: none; 
+}
+
+/* Responsive <1105px */
+@media (max-width: 1100px) {
+  .hamburger {
+    display: block; 
+  }
+
+  .headerRight button {
+    display: none;
+  }
+
+}
+
