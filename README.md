@@ -196,6 +196,61 @@ Toutes les images, logos et fichiers dans `src/assets/` sont protégés par la l
 Pour plus d’information : [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 
+---
+
+
+
+# 21 Jake 🎲
+
+![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red)
+[![React](https://img.shields.io/badge/React-18.2.0-blue)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.0-green)](https://vitejs.dev/)
+[![Deck of Cards API](https://img.shields.io/badge/API-deckofcardsapi-yellow)](https://deckofcardsapi.com/)
+
+---
+
+## Description
+
+**21 Jake** is a personal project designed to recreate the classic blackjack experience  
+with a **modern**, **immersive**, and **neon-styled** interface.  
+The goal is to combine **strategic gameplay**, **smooth animations**, and a **polished UI**  
+to deliver an engaging experience for players.
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Architecture](#architecture)
+- [State Management](#state-management-react-hooks)
+- [Game Flow](#game-flow)
+- [Technologies Used](#technologies-used)
+- [Visual Structure](#visual-structure)
+- [Installation](#installation)
+- [License](#license)
+
+---
+
+## Features
+
+- Interactive blackjack game using classic rules  
+- Balance and bet management  
+- Automatic Blackjack detection  
+- Dealer logic and player actions (Hit / Stand / Double)  
+- Secondary bets: Perfect Pair, Hot3, 21+3  
+- Full game history with pagination  
+- Interactive popups (results, errors, Game Over)  
+- Canvas animations for results (glide + fade)  
+- Typewriter animation for the “About” popup  
+- Responsive design with mobile hamburger menu  
+- Custom visual assets (Daz3D + Photoshop)  
+- Real-time card drawing via **deckofcardsapi**  
+
+---
+
+## 📁 Architecture
+
+The project is structured into **React components**:
 
 
 
@@ -208,22 +263,3 @@ Pour plus d’information : [CC BY-NC-ND 4.0](https://creativecommons.org/licens
 
 
 
-
-
-
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
