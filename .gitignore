@@ -7,10 +7,33 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# --- Vite cache ---
+.vite/
+
+# --- VS Code ---
+.vscode/
+.history/
+
+# --- Optional: Mac folder metadata ---
+.AppleDouble
+.LSOverride
+
+# --- Optional: Windows metadata ---
+ehthumbs.db
+Desktop.ini
+
+# --- Optional: JetBrains IDE ---
+.idea/
+*.iml
+
+# --- Coverage tools ---
+coverage/
 node_modules
 dist
 dist-ssr
 *.local
+
+
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +45,31 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# --- Node modules ---
+node_modules/
+
+# --- Build output ---
+dist/
+build/
+
+
+
+# --- Editor / OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Env files ---
+.env
+.env.local
+.env.*.local
+
+
+
+# --- Temporary files ---
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
