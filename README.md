@@ -47,13 +47,16 @@ L'objectif est de combiner **gameplay stratégique**, **design néon élégant**
 
 Le projet est structuré en **composants React** :
 
+Architecture
+
+Le projet est structuré en composants React :
+
 src/
-│
-├── assets/
+│── assets/
 │   ├── imgs/          # Images des cartes, jetons et résultats
 │   └── lose-wins/     # Images de victoire/défaite
 │
-├── components/
+│── components/
 │   ├── Header.jsx         # Header avec liens et menu hamburger
 │   ├── DealerZone.jsx     # Affichage de la main du croupier
 │   ├── PlayerHand.jsx     # Affichage de la main du joueur
@@ -65,9 +68,10 @@ src/
 │   ├── HistoryPopup.jsx   # Popup historique des parties
 │   └── Popups.jsx         # Popup résultat, erreurs, game over
 │
-├── App.jsx     # Composant principal gérant le jeu et les états
-├── App.css     # Styles globaux
-└── index.js    # Point d’entrée
+├── App.jsx    # Composant principal gérant le jeu et les états
+├── App.css    # Styles globaux
+└── index.js   # Point d’entrée
+
 
 
 
